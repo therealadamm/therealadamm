@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  haproxy-php:
+    build:
+      context: .
+    environment:
+      - FLAG=flag{fake_flag_dont_submit_this_flag} # For local testing only, do not submit this flag
+    ports:
+      - "3501:80"
+    cap_add:
+      - NET_BIND_SERVICE
+
